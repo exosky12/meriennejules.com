@@ -1,37 +1,68 @@
+"use client";
+import React, { useState } from "react";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Button } from "@/components/Button";
-import { Phone } from "lucide-react";
+import type { JSX } from "react/jsx-runtime";
+import { Button } from "../Button";
 
-export const Nav = () => {
+export const Nav = ({
+  navItems,
+  className,
+}: {
+  navItems: {
+    name: string;
+    link: string;
+    icon?: JSX.Element;
+  }[];
+  className?: string;
+}) => {
+  const { scrollYProgress } = useScroll();
+
+  const [visible, setVisible] = useState(true);
+
+  useMotionValueEvent(scrollYProgress, "change", () => {
+    setVisible(true);
+  });
+
   return (
-    <div className="absolute top-4 flex justify-center w-full">
-      <nav className="bg-gradient-to-b from-[rgba(0,0,0,0.18)] to-[rgba(102,102,102,0.18)] flex items-center justify-between rounded-full py-[20px] px-[64px] lg:w-[1310px]">
-        <Link href="/">meriennejules.com</Link>
-        <div>
-          <ul className="flex items-center gap-4">
-            <li>
-              <a href="#projets">Projets</a>
-            </li>
-
-            <li>
-              <a href="#articles">Articles</a>
-            </li>
-
-            <li>
-              <a href="#apropos">À propos</a>
-            </li>
-
-            <li>
-              <a href="#prix">Prix</a>
-            </li>
-
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-        <Button icon={<Phone />} link="/" name="Réserver un appel" />
-      </nav>
-    </div>
+    <AnimatePresence mode="wait">
+      <motion.div
+        initial={{
+          opacity: 1,
+          y: 0,
+        }}
+        animate={{
+          y: visible ? 0 : -100,
+          opacity: visible ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.2,
+        }}
+        className={cn(
+          "flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-white/[0.2] rounded-full bg-black shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-8 py-2  items-center justify-center space-x-4",
+          className,
+        )}
+      >
+        {navItems.map((navItem, idx: number) => (
+          <Link
+            key={`link=${idx}`}
+            href={navItem.link}
+            className={cn(
+              "relative text-neutral-50 items-center flex space-x-1 hover:text-neutral-300",
+            )}
+          >
+            <span className="block sm:hidden">{navItem.icon}</span>
+            <span className="hidden sm:block text-sm">{navItem.name}</span>
+          </Link>
+        ))}
+        <Button name="Réserver un appel" link="/" />
+      </motion.div>
+    </AnimatePresence>
   );
 };

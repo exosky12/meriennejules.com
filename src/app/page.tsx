@@ -1,5 +1,3 @@
-import { Nav } from "@/components/Nav";
-
 export default function Home() {
-  return <Nav />;
+  return <h1 className="h-[1000vh]">Home</h1>;
 }

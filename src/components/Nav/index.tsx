@@ -61,7 +61,7 @@ export const Nav = ({
             <span className="hidden sm:block text-sm">{navItem.name}</span>
           </Link>
         ))}
-        <Button name="Réserver un appel" link="/" />
+        <Button name="Réserver un appel" link="#contact" />
       </motion.div>
     </AnimatePresence>
   );

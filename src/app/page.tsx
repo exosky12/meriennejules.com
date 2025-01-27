@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/Button";
 import { LampContainer } from "@/components/Lamp";
+import { Cover } from "@/components/ui/cover";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
       </div>
       <LampContainer className="relative">
         <motion.h1
-          initial={{ opacity: 0.5, y: 100 }}
+          initial={{ opacity: 0.2, y: 100 }}
           whileInView={{ opacity: 1, y: -110 }}
           transition={{
             delay: 0.3,
@@ -22,7 +23,7 @@ export default function Home() {
           className="mt-8 bg-gradient-to-br from-slate-100 to-slate-500 py-4 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent md:text-7xl"
         >
           Lancez votre projet
-          <br /> en jours, pas en mois.
+          <br /> <Cover>en jours</Cover>, pas en mois.
         </motion.h1>
         <motion.button
           initial={{ opacity: 0, y: -110 }}

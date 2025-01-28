@@ -1,5 +1,7 @@
 # meriennejules.com 🚀
 
+# 🚧 Work in Progress 🚧
+
 Personal website and portfolio showcasing my work as a developer and designer.
 
 ## Tech Stack 💻

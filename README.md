@@ -1,6 +1,7 @@
-# meriennejules.com 🚀
-
 # 🚧 Work in Progress 🚧
+
+
+# meriennejules.com 🚀
 
 Personal website and portfolio showcasing my work as a developer and designer.
 

@@ -1,24 +1,26 @@
 # 🚧 Work in Progress 🚧
 
-
-# meriennejules.com 🚀
-
+**meriennejules.com** 🚀  
 Personal website and portfolio showcasing my work as a developer and designer.
 
-## Tech Stack 💻
+## 💻 Tech Stack
 
-- **Framework:** [Next.js 15](https://nextjs.org/) with App Router
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Icons:** [Lucide Icons](https://lucide.dev/)
-- **Linting:** ESLint with TypeScript support
-- **Type Checking:** TypeScript
-- **Git Hooks:** Husky for pre-commit checks
+- Framework: Next.js 15 with App Router  
+- Styling: Tailwind CSS  
+- Icons: Lucide Icons  
+- Linting: ESLint with TypeScript support  
+- Type Checking: TypeScript  
+- Git Hooks: Husky for pre-commit checks  
 
-## Contributing 🤝
+## 🤝 Contributing
 
 Feel free to open issues and pull requests for any improvements you'd like to suggest.
 
-## License 📝
+## 📬 Contact
 
-[MIT License](LICENSE)
+- Twitter: https://twitter.com/exosky12  
+- Email: julesmerienne06@gmail.com
 
+## 📝 License
+
+MIT License
